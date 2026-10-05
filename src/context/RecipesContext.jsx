@@ -1,8 +1,7 @@
-import { createContext, useCallback, useContext, useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { recipes as seedRecipes } from '../data/recipes.js'
 import { loadUserRecipes, saveUserRecipes } from '../utils/storage.js'
-
-const RecipesContext = createContext(null)
+import { RecipesContext } from './useRecipes.js'
 
 export function RecipesProvider({ children }) {
   const [userRecipes, setUserRecipes] = useState(loadUserRecipes)
@@ -22,10 +21,4 @@ export function RecipesProvider({ children }) {
   const value = useMemo(() => ({ recipes, addRecipe }), [recipes, addRecipe])
 
   return <RecipesContext.Provider value={value}>{children}</RecipesContext.Provider>
-}
-
-export function useRecipes() {
-  const ctx = useContext(RecipesContext)
-  if (!ctx) throw new Error('useRecipes must be used inside <RecipesProvider>')
-  return ctx
 }

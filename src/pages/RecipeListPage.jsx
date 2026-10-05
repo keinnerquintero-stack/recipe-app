@@ -1,5 +1,5 @@
 import RecipeCard from '../components/RecipeCard.jsx'
-import { useRecipes } from '../context/RecipesContext.jsx'
+import { useRecipes } from '../context/useRecipes.js'
 
 export default function RecipeListPage() {
   const { recipes } = useRecipes()

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useRecipes } from '../context/RecipesContext.jsx'
+import { useRecipes } from '../context/useRecipes.js'
 import { CATEGORIES, DIFFICULTIES, toRecipe, validateRecipe } from '../utils/validateRecipe.js'
 
 const empty = {
