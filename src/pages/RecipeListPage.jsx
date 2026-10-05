@@ -1,7 +1,9 @@
 import RecipeCard from '../components/RecipeCard.jsx'
-import { recipes } from '../data/recipes.js'
+import { useRecipes } from '../context/RecipesContext.jsx'
 
 export default function RecipeListPage() {
+  const { recipes } = useRecipes()
+
   return (
     <section>
       <h1>Recipes</h1>
