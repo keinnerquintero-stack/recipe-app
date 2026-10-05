@@ -15,7 +15,7 @@ export default function RecipeCard({ recipe }) {
           <p className="card-text">{recipe.description}</p>
           <ul className="facts" aria-label="Recipe facts">
             <li>⏱ {totalTime} min</li>
-            <li>🍽 {recipe.servings} servings</li>
+            <li>🍽 {recipe.servings} {recipe.servings === 1 ? "serving" : "servings"}</li>
             <li>📶 {recipe.difficulty}</li>
           </ul>
         </div>
